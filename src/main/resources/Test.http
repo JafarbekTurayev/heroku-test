@@ -1,0 +1,36 @@
+POST http://localhost:80/api/auth/login
+Content-Type: application/json
+
+{
+  "userName": "user",
+  "password": "user"
+}
+
+###
+//user eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyIiwiaWF0IjoxNjM0NTM3MjYyLCJleHAiOjE2MzQ1NzMyNjIsInJvbGUiOiJST0xFX0FETUlOIn0.LCg3v-9xFANCy4LdWh6O7RvA28552Z4GDR3HaciTPveL_xMrvOeHmqc6Pq40tppGxx1QFZwncN1KK71XGMV4LQ
+//admin eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTYzNDUzNzA5NSwiZXhwIjoxNjM0NTczMDk1LCJyb2xlIjoiUk9MRV9BRE1JTiJ9.-n9gP23MnyAsimZoBMW2HrYiRHscjWjYCr7lQ_9tTFaW6WZg8RPT0Yz-qI4mnTwbumZ7K9GDCOiUW9G982ZmUg
+
+###
+POST http://localhost:80/api/category
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTYzNDUzNzA5NSwiZXhwIjoxNjM0NTczMDk1LCJyb2xlIjoiUk9MRV9BRE1JTiJ9.-n9gP23MnyAsimZoBMW2HrYiRHscjWjYCr7lQ_9tTFaW6WZg8RPT0Yz-qI4mnTwbumZ7K9GDCOiUW9G982ZmUg
+
+{
+  "name": "Yangi"
+}
+
+###
+POST http://localhost:80/api/role
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTYzNDUzNzA5NSwiZXhwIjoxNjM0NTczMDk1LCJyb2xlIjoiUk9MRV9BRE1JTiJ9.-n9gP23MnyAsimZoBMW2HrYiRHscjWjYCr7lQ_9tTFaW6WZg8RPT0Yz-qI4mnTwbumZ7K9GDCOiUW9G982ZmUg
+
+{
+  "name": "NEW",
+  "permissions": [
+    "ADD_CATEGORY",
+    "DELETE_CATEGORY",
+    "EDIT_CATEG0RY",
+    "READ_CATEGORY",
+    "READ_ONE_CATEGORY"
+  ]
+}
