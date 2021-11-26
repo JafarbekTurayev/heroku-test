@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/category")
+@RequestMapping("/api/admin/category")
 public class CategoryController {
     @Autowired
     CategoryRepository categoryRepository;
@@ -24,6 +24,7 @@ public class CategoryController {
         List<Category> all = categoryRepository.findAll();
         return ResponseEntity.ok(all);
     }
+
     //    @PreAuthorize(value = "hasAnyAuthority('ADD_CATEGORY')")
     @PostMapping
     public HttpEntity<?> save(@Valid @RequestBody Category category) {
