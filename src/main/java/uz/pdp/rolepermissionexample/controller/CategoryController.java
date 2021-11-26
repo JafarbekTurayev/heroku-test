@@ -18,14 +18,14 @@ public class CategoryController {
     @Autowired
     CategoryRepository categoryRepository;
 
-    @PreAuthorize(value = "hasAnyAuthority('READ_CATEGORY')")
+    //    @PreAuthorize(value = "hasAnyAuthority('READ_CATEGORY')")
     @GetMapping
     public HttpEntity<?> getAll() {
         List<Category> all = categoryRepository.findAll();
         return ResponseEntity.ok(all);
     }
 
-    @PreAuthorize(value = "hasAnyAuthority('ADD_CATEGORY')")
+    //    @PreAuthorize(value = "hasAnyAuthority('ADD_CATEGORY')")
     @PostMapping
     public HttpEntity<?> save(@Valid @RequestBody Category category) {
         categoryRepository.save(new Category(category.getName()));
@@ -33,7 +33,7 @@ public class CategoryController {
         return ResponseEntity.ok("Saved!");
     }
 
-    @PreAuthorize(value = "hasAnyAuthority('DELETE_CATEGORY')")
+    //    @PreAuthorize(value = "hasAnyAuthority('DELETE_CATEGORY')")
     @DeleteMapping("/{id}")
     public HttpEntity<?> deleteCategory(@PathVariable int id) {
         if (categoryRepository.existsById(id)) {
@@ -45,7 +45,7 @@ public class CategoryController {
 
     }
 
-    @PreAuthorize(value = "hasAnyAuthority('EDIT_CATEG0RY')")
+    //    @PreAuthorize(value = "hasAnyAuthority('EDIT_CATEG0RY')")
     @PutMapping("/{id}")
     public HttpEntity<?> edit(@PathVariable int id, @RequestBody Category category) {
         Optional<Category> optionalCategory = categoryRepository.findById(id);
