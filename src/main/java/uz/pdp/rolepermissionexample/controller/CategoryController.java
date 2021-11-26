@@ -24,7 +24,6 @@ public class CategoryController {
         List<Category> all = categoryRepository.findAll();
         return ResponseEntity.ok(all);
     }
-
     //    @PreAuthorize(value = "hasAnyAuthority('ADD_CATEGORY')")
     @PostMapping
     public HttpEntity<?> save(@Valid @RequestBody Category category) {

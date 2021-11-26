@@ -32,6 +32,10 @@ public class AuthController {
 
 //    @PostMapping("/register")
 
+    @GetMapping("/test")
+    public HttpEntity<?> getTest() {
+        return ResponseEntity.ok("Test");
+    }
 
     @GetMapping("/me")
     public HttpEntity<?> getMe(@CurrentUser User user) {
